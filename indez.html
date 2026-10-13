@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Riff Guitar | Toko Gitar</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            color: #252525;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
+
+        .navbar {
+            background-color: #171717;
+        }
+
+        .navbar-brand {
+            color: #ff8c32;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover {
+            color: #ffad6a;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: #ff8c32;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #171717, #383838);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .hero span {
+            color: #ff8c32;
+        }
+
+        .btn-orange {
+            background-color: #ff8c32;
+            color: white;
+            border: none;
+        }
+
+        .btn-orange:hover {
+            background-color: #e8751d;
+            color: white;
+        }
+
+        .judul-section {
+            color: #252525;
+            font-weight: bold;
+        }
+
+        .card {
+            border: none;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gambar-produk {
+            height: 220px;
+            object-fit: contain;
+            padding: 15px;
+            background-color: #eeeeee;
+        }
+
+        .harga {
+            color: #e8751d;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .tentang {
+            background-color: white;
+        }
+
+        .ikon-keunggulan {
+            color: #ff8c32;
+            font-size: 35px;
+        }
+
+        .kontak {
+            background-color: #eeeeee;
+        }
+
+        footer {
+            background-color: #171717;
+            color: white;
+        }
+
+        footer a {
+            color: #ff8c32;
+            text-decoration: none;
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero {
+                padding: 75px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="#beranda">
+                <i class="bi bi-music-note-beamed"></i> RIFF GUITAR
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
+                aria-controls="menuNavbar" aria-expanded="false" aria-label="Buka navigasi">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beranda">Beranda</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produk">Produk</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang Kami</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-orange mt-2 mt-lg-0" type="button" onclick="lihatKeranjang()">
+                            <i class="bi bi-cart3"></i>
+                            Keranjang (<span id="jumlahKeranjang">0</span>)
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="hero">
+        <div class="container">
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-7">
+                    <p class="text-uppercase fw-bold" style="color: #ff8c32;">
+                        Temukan Suara Terbaikmu
+                    </p>
+
+                    <h1>
+                        Your Music,<br>
+                        <span>Your Style.</span>
+                    </h1>
+
+                    <p class="lead mt-3">
+                        Temukan gitar impianmu dan mulai ciptakan
+                        musik dengan karakter yang berbeda.
+                    </p>
+
+                    <p>
+                        Pilihan gitar untuk pemula hingga musisi
+                        yang ingin terus berkembang.
+                    </p>
+
+                    <a href="#produk" class="btn btn-orange btn-lg mt-3">
+                        Jelajahi Produk
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="col-lg-5 text-center">
+                    <img src="https://images.unsplash.com/photo-1550291652-6ea9114a47b1?auto=format&fit=crop&w=800&q=80"
+                        alt="Gitar elektrik" class="img-fluid rounded-4 shadow"
+                        style="max-height: 350px; width: 100%; object-fit: cover;">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PRODUK -->
+    <section id="produk" class="py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <p class="text-uppercase fw-bold" style="color: #e8751d;">
+                    Koleksi Kami
+                </p>
+
+                <h2 class="judul-section">Pilihan Gitar Terbaik</h2>
+
+                <p class="text-secondary">
+                    Temukan gitar yang sesuai dengan gaya bermusikmu.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- PRODUK 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?auto=format&fit=crop&w=700&q=80"
+                            class="card-img-top gambar-produk" alt="Gitar elektrik">
+
+                        <div class="card-body">
+                            <span class="badge text-bg-dark mb-2">Elektrik</span>
+
+                            <h5 class="card-title fw-bold">
+                                Electric Guitar
+                            </h5>
+
+                            <p class="card-text text-secondary">
+                                Gitar elektrik dengan karakter suara yang
+                                cocok untuk rock, blues, dan pop.
+                            </p>
+
+                            <p class="harga">Rp2.500.000</p>
+
+                            <button class="btn btn-orange w-100" onclick="tambahKeranjang('Electric Guitar', 2500000)">
+                                <i class="bi bi-cart-plus"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUK 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=700&q=80"
+                            class="card-img-top gambar-produk" alt="Gitar akustik">
+
+                        <div class="card-body">
+                            <span class="badge text-bg-success mb-2">Akustik</span>
+
+                            <h5 class="card-title fw-bold">
+                                Acoustic Guitar
+                            </h5>
+
+                            <p class="card-text text-secondary">
+                                Gitar akustik dengan suara natural untuk
+                                latihan, tampil, dan bermain bersama.
+                            </p>
+
+                            <p class="harga">Rp1.200.000</p>
+
+                            <button class="btn btn-orange w-100" onclick="tambahKeranjang('Acoustic Guitar', 1200000)">
+                                <i class="bi bi-cart-plus"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUK 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1556449895-a33c9dba33dd?auto=format&fit=crop&w=700&q=80"
+                            class="card-img-top gambar-produk" alt="Gitar bass">
+
+                        <div class="card-body">
+                            <span class="badge text-bg-primary mb-2">Bass</span>
+
+                            <h5 class="card-title fw-bold">
+                                Electric Bass
+                            </h5>
+
+                            <p class="card-text text-secondary">
+                                Pilihan untuk menghasilkan nada rendah
+                                dan menjaga groove dalam sebuah band.
+                            </p>
+
+                            <p class="harga">Rp2.800.000</p>
+
+                            <button class="btn btn-orange w-100" onclick="tambahKeranjang('Electric Bass', 2800000)">
+                                <i class="bi bi-cart-plus"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUK 4 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=700&q=80"
+                            class="card-img-top gambar-produk" alt="Gitar klasik">
+
+                        <div class="card-body">
+                            <span class="badge text-bg-warning mb-2">Klasik</span>
+
+                            <h5 class="card-title fw-bold">
+                                Classical Guitar
+                            </h5>
+
+                            <p class="card-text text-secondary">
+                                Gitar dengan senar nilon yang nyaman
+                                untuk latihan dan permainan klasik.
+                            </p>
+
+                            <p class="harga">Rp950.000</p>
+
+                            <button class="btn btn-orange w-100" onclick="tambahKeranjang('Classical Guitar', 950000)">
+                                <i class="bi bi-cart-plus"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUK 5 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1588449668365-d15e397f6787?auto=format&fit=crop&w=700&q=80"
+                            class="card-img-top gambar-produk" alt="Gitar elektrik untuk musisi">
+
+                        <div class="card-body">
+                            <span class="badge text-bg-danger mb-2">Premium</span>
+
+                            <h5 class="card-title fw-bold">
+                                Premium Guitar
+                            </h5>
+
+                            <p class="card-text text-secondary">
+                                Pilihan gitar untuk musisi yang ingin
+                                mengeksplorasi karakter suara.
+                            </p>
+
+                            <p class="harga">Rp4.500.000</p>
+
+                            <button class="btn btn-orange w-100" onclick="tambahKeranjang('Premium Guitar', 4500000)">
+                                <i class="bi bi-cart-plus"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUK 6 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=700&q=80"
+                            class="card-img-top gambar-produk" alt="Aksesori gitar">
+
+                        <div class="card-body">
+                            <span class="badge text-bg-secondary mb-2">Aksesori</span>
+
+                            <h5 class="card-title fw-bold">
+                                Guitar Accessories
+                            </h5>
+
+                            <p class="card-text text-secondary">
+                                Perlengkapan tambahan untuk mendukung
+                                kegiatan bermain gitar.
+                            </p>
+
+                            <p class="harga">Rp150.000</p>
+
+                            <button class="btn btn-orange w-100"
+                                onclick="tambahKeranjang('Guitar Accessories', 150000)">
+                                <i class="bi bi-cart-plus"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="tentang py-5">
+        <div class="container py-3">
+            <div class="row align-items-center g-4">
+
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80"
+                        alt="Musisi sedang tampil" class="img-fluid rounded-4 shadow-sm"
+                        style="width: 100%; height: 320px; object-fit: cover;">
+                </div>
+
+                <div class="col-md-6">
+                    <p class="text-uppercase fw-bold" style="color: #e8751d;">
+                        Tentang Riff Guitar
+                    </p>
+
+                    <h2 class="judul-section mb-3">
+                        Teman Perjalanan Musikmu
+                    </h2>
+
+                    <p>
+                        Riff Guitar adalah konsep toko alat musik yang
+                        menyediakan berbagai pilihan gitar untuk menemani
+                        perjalanan bermusik.
+                    </p>
+
+                    <p>
+                        Kami percaya bahwa setiap musisi memiliki gaya
+                        dan karakter suara yang berbeda. Karena itu,
+                        memilih gitar yang tepat menjadi bagian penting
+                        dalam proses bermusik.
+                    </p>
+
+                    <a href="#produk" class="btn btn-orange px-4">
+                        Lihat Koleksi
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- KEUNGGULAN -->
+    <section class="py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="judul-section">Kenapa Memilih Kami?</h2>
+                <p class="text-secondary">
+                    Pengalaman berbelanja alat musik yang lebih nyaman.
+                </p>
+            </div>
+
+            <div class="row g-4 text-center">
+
+                <div class="col-12 col-md-4">
+                    <div class="p-4">
+                        <i class="bi bi-music-note-list ikon-keunggulan"></i>
+                        <h5 class="fw-bold mt-3">Pilihan Beragam</h5>
+                        <p class="text-secondary">
+                            Berbagai kategori gitar untuk kebutuhan bermusikmu.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="p-4">
+                        <i class="bi bi-tags ikon-keunggulan"></i>
+                        <h5 class="fw-bold mt-3">Harga Informatif</h5>
+                        <p class="text-secondary">
+                            Informasi harga dan deskripsi produk ditampilkan dengan jelas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="p-4">
+                        <i class="bi bi-chat-dots ikon-keunggulan"></i>
+                        <h5 class="fw-bold mt-3">Mudah Dihubungi</h5>
+                        <p class="text-secondary">
+                            Pengunjung dapat mengirim pertanyaan melalui form kontak.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- KONTAK -->
+    <section id="kontak" class="kontak py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <p class="text-uppercase fw-bold" style="color: #e8751d;">
+                    Hubungi Kami
+                </p>
+
+                <h2 class="judul-section">Ada yang Ingin Ditanyakan?</h2>
+
+                <p class="text-secondary">
+                    Kirim pesan atau pertanyaan seputar produk gitar kami.
+                </p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+
+                    <div class="card shadow-sm rounded-4">
+                        <div class="card-body p-4 p-md-5">
+
+                            <form id="formKontak">
+
+                                <div class="mb-3">
+                                    <label for="nama" class="form-label">
+                                        Nama
+                                    </label>
+
+                                    <input type="text" class="form-control" id="nama" placeholder="Masukkan nama kamu"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input type="email" class="form-control" id="email" placeholder="nama@email.com"
+                                        required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="pesan" class="form-label">
+                                        Pesan
+                                    </label>
+
+                                    <textarea class="form-control" id="pesan" rows="4" placeholder="Tulis pesan kamu..."
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-orange w-100">
+                                    Kirim Pesan
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MODAL KONFIRMASI KONTAK -->
+    <div class="modal fade" id="modalKonfirmasi" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="judulModal">
+                        Konfirmasi Pesan
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+
+                <div class="modal-body">
+                    Apakah kamu yakin ingin mengirim pesan ini?
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Batal
+                    </button>
+
+                    <button type="button" class="btn btn-orange" id="konfirmasiKirim">
+                        Ya, Kirim
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL KERANJANG -->
+    <div class="modal fade" id="modalKeranjang" tabindex="-1" aria-labelledby="judulKeranjang" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="judulKeranjang">
+                        <i class="bi bi-cart3"></i> Keranjang Belanja
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="isiKeranjang">
+                        Keranjang masih kosong.
+                    </div>
+
+                    <hr>
+
+                    <h5 class="fw-bold">
+                        Total: <span id="totalHarga">Rp0</span>
+                    </h5>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Tutup
+                    </button>
+
+                    <button type="button" class="btn btn-orange" onclick="checkoutDemo()">
+                        Lanjutkan
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="py-4">
+        <div class="container">
+
+            <div class="row align-items-center text-center text-md-start g-3">
+
+                <div class="col-md-6">
+                    <h4 class="fw-bold" style="color: #ff8c32;">
+                        <i class="bi bi-music-note-beamed"></i> Riff Guitar
+                    </h4>
+
+                    <p class="mb-0">
+                        Your Music, Your Style.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <a href="#beranda" class="me-3">Beranda</a>
+                    <a href="#produk" class="me-3">Produk</a>
+                    <a href="#tentang" class="me-3">Tentang</a>
+                    <a href="#kontak">Kontak</a>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center small mb-0">
+                &copy; 2026 Riff Guitar. Website proyek pembelajaran.
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
